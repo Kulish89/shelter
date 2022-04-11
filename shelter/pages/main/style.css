@@ -225,3 +225,46 @@ body {
   gap: 30px;
   padding-bottom: 30px;
 }
+/* ====HELP========================================================= */
+
+.help {
+  padding: 80px 87px 100px 87px;
+}
+.help__container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  text-align: center;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+}
+.content__row1 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 120px;
+}
+.content__item {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+.content__icon {
+  height: 60px;
+}
+.content__title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+.content__row2 {
+  padding: 0 84px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 120px;
+}
