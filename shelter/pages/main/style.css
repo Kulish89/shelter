@@ -269,10 +269,12 @@ body {
   grid-column-gap: 120px;
 }
 /* ======Donation============================= */
-
+.donation-block {
+  background-color: #f6f6f6;
+}
 .donation-block__container {
   padding: 80px 142px 100px 142px;
-  background-color: #f6f6f6;
+
   display: flex;
   gap: 30px;
 }
@@ -313,4 +315,38 @@ body {
   line-height: 150%;
   color: #b2b2b2;
 }
-/* DONATION========================================================= */
+/* footer========================================================= */
+.footer {
+  background: url(noise_lines_transparent@2X.png),
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%),
+    #211f20;
+}
+.footer__container {
+  padding-top: 40px;
+  display: flex;
+  gap: 160px;
+}
+
+.footer__content {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 60px;
+}
+
+.content__title {
+  color: #ffffff;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+.content__description {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
