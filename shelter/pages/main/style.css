@@ -140,10 +140,44 @@ body {
   line-height: 160%;
   color: #cdcdcd;
 }
-
+/* ============================================== */
 .orange-button {
   color: #292929;
   padding: 15px 45px;
   background-color: #f1cdb3;
   border-radius: 100px;
+}
+.section-title {
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+/* ========About======================================================== */
+.about-block {
+  padding: 80px 0 100px 0;
+}
+.about-block__container {
+  display: flex;
+  align-items: center;
+}
+
+.about-block__picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 50%;
+}
+.about-block__content {
+  flex: 0 1 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.about-block__text {
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 160%;
+  color: #4c4c4c;
 }
