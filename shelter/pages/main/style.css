@@ -37,6 +37,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100%;
   max-width: 1280px;
   position: relative;
@@ -44,7 +45,7 @@ body {
 }
 ._container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 40px;
 }
 
 ._ibg img {
@@ -227,10 +228,8 @@ body {
 }
 /* ====HELP========================================================= */
 
-.help {
-  padding: 80px 87px 100px 87px;
-}
 .help__container {
+  padding: 80px 87px 100px 87px;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -238,52 +237,49 @@ body {
 }
 .content {
   display: flex;
-  flex-direction: column;
-  gap: 55px;
-}
-.content__row1 {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  flex-wrap: wrap;
+  grid-row-gap: 55px;
   grid-column-gap: 120px;
+  justify-content: center;
+  margin: 0 -60px;
 }
+
 .content__item {
   display: flex;
   flex-direction: column;
   gap: 30px;
   align-items: center;
+  background-color: #ffffff;
 }
-.content__icon {
+.item__icon {
   height: 60px;
 }
-.content__title {
+.item__title {
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #545454;
 }
-.content__row2 {
-  padding: 0 84px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 120px;
-}
+
 /* ======Donation============================= */
 .donation-block {
   background-color: #f6f6f6;
 }
 .donation-block__container {
-  padding: 80px 142px 100px 142px;
-
+  padding: 80px 143px 100px 143px;
   display: flex;
-  gap: 30px;
+  align-items: center;
 }
-
+.donation-block__picture {
+  margin-right: 30px;
+}
 .donation-block__content {
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 20px;
+  margin: -5px 0;
 }
 .donation-block__subtitle {
   font-size: 15px;
@@ -305,6 +301,7 @@ body {
   letter-spacing: 0.06em;
   line-height: 115%;
   background-color: #f1cdb3;
+  margin-right: -15px;
 }
 
 .donation-block__text {
@@ -323,25 +320,26 @@ body {
 }
 .footer__container {
   padding-top: 40px;
+}
+.footer__content {
   display: flex;
   gap: 160px;
 }
-
-.footer__content {
-  padding-top: 16px;
+.footer__content-contacts {
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 60px;
+  gap: 40px;
 }
 
-.content__title {
+.footer__content-title {
   color: #ffffff;
   font-size: 35px;
   line-height: 130%;
   letter-spacing: 0.06em;
 }
-.content__description {
+.footer__content-description {
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
@@ -349,4 +347,5 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  margin: 0 -10px;
 }
