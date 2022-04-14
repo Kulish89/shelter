@@ -10,9 +10,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
-a:hover {
-  cursor: pointer;
-}
+
 ul,
 ol,
 li {
@@ -60,6 +58,39 @@ body {
   left: 0;
   object-fit: cover;
   z-index: -50;
+}
+._button {
+  color: #292929;
+  padding: 15px 45px;
+  border-radius: 100px;
+  min-height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 120%;
+}
+.orange-button {
+  background-color: #f1cdb3;
+}
+.colorless-button {
+  border: 2px solid #f1cdb3;
+}
+.orange-button:hover {
+  background-color: #fddcc4;
+  cursor: pointer;
+}
+.colorless-button:hover {
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
+}
+.section-title {
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
 }
 /* =========================================================================== */
 .header {
@@ -131,6 +162,8 @@ body {
   flex-direction: column;
   gap: 42px;
   align-items: flex-start;
+  position: relative;
+  z-index: 3;
 }
 .main-block__title {
   max-width: 310px;
@@ -147,32 +180,7 @@ body {
   color: #cdcdcd;
 }
 /* ============================================== */
-.button {
-  color: #292929;
-  padding: 15px 45px;
-  border-radius: 100px;
-  min-height: 52px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 17px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  line-height: 120%;
-}
-.orange-button {
-  background-color: #f1cdb3;
-}
-.colorless-button {
-  border: 2px solid #f1cdb3;
-}
-.section-title {
-  font-size: 35px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  color: #545454;
-}
+
 /* ========About======================================================== */
 .about-block {
   padding: 80px 0 100px 0;
@@ -219,7 +227,8 @@ body {
 
 .friends-block__items {
   display: flex;
-  gap: 90px;
+  /* gap: 90px; */
+  align-items: center;
 }
 
 .item {
@@ -229,6 +238,32 @@ body {
   align-items: center;
   gap: 30px;
   padding-bottom: 30px;
+  margin: 0 45px;
+  border-radius: 9px;
+}
+.item:hover {
+  background-color: #ffffff;
+}
+.item:hover a {
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
+}
+
+.colorless-arrow-button {
+  border-radius: 50%;
+  height: 52px;
+  width: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #f1cdb3;
+}
+._right-arrow {
+  margin-left: 8px;
+  transform: rotate(180deg);
+}
+._left-arrow {
+  margin-right: 8px;
 }
 /* ====HELP========================================================= */
 
@@ -299,12 +334,14 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  cursor: pointer;
   font-size: 20px;
   letter-spacing: 0.06em;
   line-height: 115%;
   background-color: #f1cdb3;
   margin-right: -15px;
+}
+.donation-block__btn:hover {
+  cursor: pointer;
 }
 
 .donation-block__text {
