@@ -207,6 +207,9 @@ body {
   border: 2px solid #cdcdcd;
   pointer-events: none;
 }
+.colorless-arrow-button:disabled img {
+  opacity: 0.5;
+}
 
 ._left-arrows {
   transform: rotate(180deg);
