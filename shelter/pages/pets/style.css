@@ -376,7 +376,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  margin-bottom: 60px;
   gap: 40px;
 }
 .footer__content-image {
@@ -410,6 +410,7 @@ body {
   }
   .footer__content-contacts {
     gap: 33px;
+    margin-bottom: 0;
   }
 }
 @media (max-width: 767px) {
