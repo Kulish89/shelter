@@ -330,6 +330,8 @@ body {
 .about-block__container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 125px;
 }
 
 .about-block__picture {
@@ -337,6 +339,7 @@ body {
   align-items: center;
   justify-content: center;
   flex: 0 1 50%;
+  max-width: 300px;
 }
 .about-block__picture img {
   width: 100%;
