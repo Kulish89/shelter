@@ -12,9 +12,15 @@
       <header class="header">
         <div class="header__container _container">
           <div class="header__logo">
-            <a class="header__logo-title" href="../main/index.html"
-              ><h1>Cozy House</h1></a
-            >
+            <div class="header__logo-title">
+              <h1><a href="../main/index.html">Cozy House</a></h1>
+              <div class="burger">
+                <p class="burger__line"></p>
+                <p class="burger__line"></p>
+                <p class="burger__line"></p>
+              </div>
+            </div>
+
             <p class="header__logo-subtitle">Shelter for pets in Boston</p>
           </div>
           <nav class="header__menu menu">
@@ -22,9 +28,11 @@
               <li class="menu__list-item">
                 <a href="../main/index.html">About the shelter</a>
               </li>
-              <li class="menu__list-item active"><a href="#">Our pets</a></li>
+              <li class="menu__list-item active">
+                <a href="../pets/index.html">Our pets</a>
+              </li>
               <li class="menu__list-item">
-                <a href="../main/index.html#help">Help the shelter</a>
+                <a href="#help">Help the shelter</a>
               </li>
               <li class="menu__list-item"><a href="#contacts">Contacts</a></li>
             </ul>
@@ -73,7 +81,7 @@
                     >Learn more</a
                   >
                 </div>
-                <div class="ourpets-content__card card">
+                <div class="ourpets-content__card card sophia">
                   <img
                     class="card__img"
                     src="../../assets/images/pets-sophia.png"
@@ -84,7 +92,7 @@
                     >Learn more</a
                   >
                 </div>
-                <div class="ourpets-content__card card">
+                <div class="ourpets-content__card card timmy">
                   <img
                     class="card__img"
                     src="../../assets/images/pets-timmy.png"
@@ -95,7 +103,7 @@
                     >Learn more</a
                   >
                 </div>
-                <div class="ourpets-content__card card">
+                <div class="ourpets-content__card card charly">
                   <img
                     class="card__img"
                     src="../../assets/images/pets-charly.png"
@@ -106,7 +114,7 @@
                     >Learn more</a
                   >
                 </div>
-                <div class="ourpets-content__card card">
+                <div class="ourpets-content__card card scarlett">
                   <img
                     class="card__img"
                     src="../../assets/images/pets-scarlet.png"
@@ -117,7 +125,7 @@
                     >Learn more</a
                   >
                 </div>
-                <div class="ourpets-content__card card">
+                <div class="ourpets-content__card card freddie">
                   <img
                     class="card__img"
                     src="../../assets/images/pets-freddie.png"
@@ -132,12 +140,10 @@
               <div class="ourpets-content__buttons">
                 <button
                   class="ourpets-content_button colorless-arrow-button _left-arrows disabled"
-                  disabled
                 >
                   <img src="../../assets/icons/doublemark.svg" alt="" /></button
                 ><button
                   class="ourpets-content_button colorless-arrow-button _left-arrow disabled"
-                  disabled
                 >
                   <img src="../../assets/icons/mark.svg" alt="" /></button
                 ><a
@@ -181,14 +187,14 @@
               <h5 class="footer__content-title">
                 We are waiting for your visit
               </h5>
-              <div class="footer__content-description">
+              <div class="footer__content-description map">
                 <a href="https://goo.gl/maps/o8M3ujMJzJz9Phb2A"
                   ><img src="../../assets/icons/pin.svg" alt="" /></a
                 ><a href="https://goo.gl/maps/o8M3ujMJzJz9Phb2A"
                   >1 Central Street, Boston (entrance from the store)</a
                 >
               </div>
-              <div class="footer__content-description">
+              <div class="footer__content-description map">
                 <a href="https://goo.gl/maps/P5986y3kP6TSD23v5"
                   ><img src="../../assets/icons/pin.svg" alt="" /></a
                 ><a href="https://goo.gl/maps/P5986y3kP6TSD23v5"
@@ -203,5 +209,6 @@
         </div>
       </footer>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
