@@ -193,11 +193,8 @@ function getUniqueCards(count, pets) {
   return result;
 }
 function getId(arr) {
-  let num = Math.floor(Math.random() * PETS.length);
-  if (arr.includes(num)) {
-    getId(arr);
-  }
-  return num;
+  let num = Math.floor(Math.random() * 8);
+  return arr.includes(num) ? getId(arr) : num;
 }
 
 function createPetCard(obj) {
