@@ -100,6 +100,7 @@ const BURGER = document.querySelector(".burger");
 const MENU = document.querySelector(".header__menu");
 const MAIN_BLOCK = document.querySelector(".main-block");
 const OUR_PETS_CARDS = document.querySelector(".friends-block__cards");
+const OUR_PETS_CARD = document.querySelector(".friends-block__item");
 const CARROUSEL_CENTER_BLOCK = document.querySelector(".block-center");
 const CARROUSEL_LEFT_BLOCK = document.querySelector(".block-left");
 const CARROUSEL_RIGHT_BLOCK = document.querySelector(".block-right");
@@ -107,6 +108,9 @@ const CARROUSEL = document.querySelector(".carrousel__wrapper");
 const LEFT_ARROW_CARROUSEL = document.querySelector("._left-arrow");
 const RIGHT_ARROW_CARROUSEL = document.querySelector("._right-arrow");
 const CARROUSEL_BLOCK = document.querySelector(".carrousel");
+const POPUP = document.getElementById("popup");
+const CLOSE_POPUP = document.querySelector(".popup__close");
+const POPUP_CONTENT = document.querySelector(".popup__content");
 
 const PETS = [];
 for (let obj of JSON) {
@@ -163,7 +167,9 @@ CARROUSEL.addEventListener("animationend", (event) => {
     );
   }
 });
+
 // =====================================================================
+
 function createCarrouselContent(amount) {
   let cardsforCentralblock = getUniqueCards(amount, []);
   createCarrouselBlock(CARROUSEL_CENTER_BLOCK, cardsforCentralblock);
@@ -192,13 +198,14 @@ function getUniqueCards(count, pets) {
   }
   return result;
 }
+
 function getId(arr) {
   let num = Math.floor(Math.random() * 8);
   return arr.includes(num) ? getId(arr) : num;
 }
 
 function createPetCard(obj) {
-  return `<div id = ${obj.id} class="friends-block__item item"><img class="item__img"
+  return `<div id = ${obj.id} class="friends-block__item item" onclick="openPopup(event, ${obj.id})"><img class="item__img"
   src="../../assets/images/${obj.name}.png"
   alt="${obj.name} photo"/>
 <h5 class="item__name">${obj.name}</h5>
@@ -206,11 +213,56 @@ function createPetCard(obj) {
   >Learn more</a>
 </div>`;
 }
+
 function moveLeft(event) {
   event.preventDefault();
   CARROUSEL.classList.add("transition-left");
 }
+
 function moveRight(event) {
   event.preventDefault();
   CARROUSEL.classList.add("transition-right");
+}
+
+function openPopup(event, id) {
+  event.preventDefault();
+  let obj = PETS.find((pet) => pet.id == id);
+  POPUP_CONTENT.innerHTML = createPopupContent(obj);
+  POPUP.classList.add("open");
+  document.documentElement.classList.add("blocking");
+  POPUP.addEventListener("click", function (e) {
+    if (!e.target.closest(".popup__content")) {
+      POPUP.classList.remove("open");
+      document.documentElement.classList.remove("blocking");
+    }
+  });
+}
+function closePopup(event) {
+  event.preventDefault();
+  POPUP.classList.remove("open");
+  document.documentElement.classList.remove("blocking");
+}
+function createPopupContent(obj) {
+  return `<div class="pet__image">
+  <img src="../../assets/images/${
+    obj.name
+  }.png" alt="" /></div><div class="pet__about">
+  <div>
+    <h3 class="pet__name">${obj.name}</h3>
+    <h5 class="pet__breed">${obj.type}-${obj.breed}</h5>
+  </div> <p class="pet__description">${obj.description}</p>
+  <ul class="pet__others others-list">
+    <li class="pet__age others-list__item">
+      <strong>Age:</strong>${obj.age}</li>
+    <li class="pet__inoculations others-list__item">
+      <strong>Inoculations:</strong>${obj.inoculations.join(", ")}</li>
+    <li class="pet__diseases others-list__item">
+      <strong>Diseases:</strong>${obj.diseases.join(", ")}</li>
+    <li class="pet__parasites others-list__item">
+      <strong>Parasites:</strong>${obj.parasites.join(", ")}</li>
+  </ul>
+</div>
+<a href="#" class="popup__close" onclick = "closePopup(event)"
+  ><img src="../../assets/icons/modal-close-vector.svg" alt=""
+/></a>`;
 }
