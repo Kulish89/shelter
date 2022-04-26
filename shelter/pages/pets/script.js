@@ -187,7 +187,8 @@ PAGINATION_PAGE_NUMBER.innerText = `${i + 1}`;
 PAGINATION_LEFT_DOUBLEARROW.classList.add("disabled");
 PAGINATION_LEFT_ARROW.classList.add("disabled");
 
-function rightClick() {
+function rightClick(event) {
+  event.preventDefault();
   PAGINATION_LEFT_DOUBLEARROW.classList.remove("disabled");
   PAGINATION_LEFT_ARROW.classList.remove("disabled");
   let pages = document.querySelectorAll(".ourpets-content__cards-wrapper");
@@ -212,7 +213,8 @@ function rightClick() {
     }
   }
 }
-function leftClick() {
+function leftClick(event) {
+  event.preventDefault();
   PAGINATION_RIGHT_DOUBLEARROW.classList.remove("disabled");
   PAGINATION_RIGHT_ARROW.classList.remove("disabled");
   let pages = document.querySelectorAll(".ourpets-content__cards-wrapper");
@@ -237,7 +239,8 @@ function leftClick() {
     }
   }
 }
-function rightToEnd() {
+function rightToEnd(event) {
+  event.preventDefault();
   let pages = document.querySelectorAll(".ourpets-content__cards-wrapper");
   pages[i].style.display = "none";
   i = pages.length - 1;
@@ -258,7 +261,8 @@ function rightToEnd() {
   PAGINATION_RIGHT_DOUBLEARROW.classList.add("disabled");
   PAGINATION_RIGHT_ARROW.classList.add("disabled");
 }
-function leftToStart() {
+function leftToStart(event) {
+  event.preventDefault();
   let pages = document.querySelectorAll(".ourpets-content__cards-wrapper");
   pages[i].style.display = "none";
   i = 0;
