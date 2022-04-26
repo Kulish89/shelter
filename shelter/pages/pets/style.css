@@ -115,7 +115,7 @@ body {
   background-color: #ffffff;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1279px) {
   .header {
     position: fixed;
     top: 0;
@@ -218,9 +218,12 @@ body {
   transform: rotate(90deg);
 }
 /* =====Friends========================================================= */
+.main {
+  width: 100%;
+  background-color: #f6f6f6;
+}
 .main__ourpets {
   padding: 80px 0 100px 0;
-  background-color: #f6f6f6;
 }
 
 .ourpets-content {
@@ -234,17 +237,23 @@ body {
   text-align: center;
 }
 
-.ourpets-content__cards {
-  width: 100%;
-  background-color: #f6f6f6;
+.ourpets-content__cards-wrapper {
+  width: 1200px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 40px;
   row-gap: 30px;
   justify-content: center;
   justify-items: center;
+  display: none;
+}
+.ourpets-content__cards {
+  width: 1200px;
 }
 
+.ourpets-content__cards :first-child {
+  display: grid;
+}
 .card {
   background-color: #fafafa;
   display: flex;
@@ -255,6 +264,7 @@ body {
   border-radius: 9px;
   max-height: 435px;
 }
+
 .card__name {
   font-size: 1.25em;
   line-height: 110%;
@@ -310,8 +320,10 @@ body {
   font-size: 20px;
   line-height: 115%;
   color: #292929;
+  text-align: center;
 }
-@media screen and (max-width: 1023px) {
+
+@media screen and (max-width: 1279px) {
   .main {
     padding-top: 120.15px;
   }
@@ -329,30 +341,30 @@ body {
     padding: 42px 0;
   }
 }
-@media screen and (max-width: 1023px) {
-  .freddie,
-  .scarlett {
-    display: none;
-  }
+@media screen and (max-width: 1279px) {
   .ourpets-content {
     gap: 30px;
   }
-  .ourpets-content__cards {
+  .ourpets-content__cards-wrapper {
+    width: 708px;
     display: flex;
     flex-wrap: wrap;
     column-gap: 40px;
     row-gap: 30px;
+    display: none;
   }
+  .ourpets-content__cards {
+    width: 708px;
+  }
+  .ourpets-content__cards :first-child {
+    display: flex;
+  }
+
   .card {
     flex: 0 1 270px;
   }
 }
 @media screen and (max-width: 767px) {
-  .charly,
-  .timmy,
-  .sophia {
-    display: none;
-  }
   .ourpets-content {
     gap: 42px;
   }
@@ -360,8 +372,14 @@ body {
     gap: 10px;
     margin-top: 0;
   }
+  .ourpets-content__cards-wrapper {
+    width: 300px;
+  }
+  .ourpets-content__cards {
+    width: 300px;
+  }
 }
-/* footer========================================================= */
+
 /* footer========================================================= */
 .footer {
   width: 100%;
