@@ -102,6 +102,7 @@ for (let obj of JSON) {
   PETS.push(obj);
 }
 let PETS48IDIES = createArrayOfPets(PETS);
+const WRAPPER = document.querySelector(".wrapper");
 const CARDS_BLOCK = document.querySelector(".ourpets-content__cards");
 const BURGER = document.querySelector(".burger");
 const MENU = document.querySelector(".header__menu");
@@ -332,6 +333,12 @@ function createPopupContent(obj) {
 BURGER.addEventListener("click", function () {
   BURGER.classList.toggle("burger-rotate");
   MENU.classList.toggle("transition-menu");
+});
+MENU.addEventListener("click", function (event) {
+  if (event.target.tagName == "A") {
+    BURGER.classList.toggle("burger-rotate");
+    MENU.classList.toggle("transition-menu");
+  }
 });
 PAGINATION_RIGHT_ARROW.addEventListener("click", rightClick);
 PAGINATION_LEFT_ARROW.addEventListener("click", leftClick);

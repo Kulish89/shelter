@@ -882,7 +882,7 @@ body {
   backdrop-filter: blur(1px);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 .open {
   opacity: 1;
@@ -973,10 +973,10 @@ body {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
 }
-/* .popup__body:hover:not(.popup__content).popup__close {
+.popup:hover .popup__content:not(:hover) .popup__close {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
-} */
+}
 @media screen and (max-width: 1279px) {
   .popup__content {
     flex: 0 0 630px;

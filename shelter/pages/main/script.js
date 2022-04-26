@@ -134,7 +134,12 @@ BURGER.addEventListener("click", function () {
   BURGER.classList.toggle("burger-rotate");
   MENU.classList.toggle("transition-menu");
 });
-
+MENU.addEventListener("click", function (event) {
+  if (event.target.tagName == "A") {
+    BURGER.classList.toggle("burger-rotate");
+    MENU.classList.toggle("transition-menu");
+  }
+});
 LEFT_ARROW_CARROUSEL.addEventListener("click", moveLeft);
 
 RIGHT_ARROW_CARROUSEL.addEventListener("click", moveRight);
