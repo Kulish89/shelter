@@ -237,6 +237,48 @@ function leftClick() {
     }
   }
 }
+function rightToEnd() {
+  let pages = document.querySelectorAll(".ourpets-content__cards-wrapper");
+  pages[i].style.display = "none";
+  i = pages.length - 1;
+  switch (CARDS_BLOCK.offsetWidth) {
+    case 1200:
+      pages[i].style.display = "grid";
+      break;
+    case 708:
+      pages[i].style.display = "flex";
+      break;
+    case 300:
+      pages[i].style.display = "flex";
+      break;
+  }
+  PAGINATION_PAGE_NUMBER.innerText = `${i + 1}`;
+  PAGINATION_LEFT_DOUBLEARROW.classList.remove("disabled");
+  PAGINATION_LEFT_ARROW.classList.remove("disabled");
+  PAGINATION_RIGHT_DOUBLEARROW.classList.add("disabled");
+  PAGINATION_RIGHT_ARROW.classList.add("disabled");
+}
+function leftToStart() {
+  let pages = document.querySelectorAll(".ourpets-content__cards-wrapper");
+  pages[i].style.display = "none";
+  i = 0;
+  switch (CARDS_BLOCK.offsetWidth) {
+    case 1200:
+      pages[i].style.display = "grid";
+      break;
+    case 708:
+      pages[i].style.display = "flex";
+      break;
+    case 300:
+      pages[i].style.display = "flex";
+      break;
+  }
+  PAGINATION_PAGE_NUMBER.innerText = `${i + 1}`;
+  PAGINATION_RIGHT_DOUBLEARROW.classList.remove("disabled");
+  PAGINATION_RIGHT_ARROW.classList.remove("disabled");
+  PAGINATION_LEFT_DOUBLEARROW.classList.add("disabled");
+  PAGINATION_LEFT_ARROW.classList.add("disabled");
+}
 // =================================================================================
 BURGER.addEventListener("click", function () {
   BURGER.classList.toggle("burger-rotate");
@@ -244,3 +286,5 @@ BURGER.addEventListener("click", function () {
 });
 PAGINATION_RIGHT_ARROW.addEventListener("click", rightClick);
 PAGINATION_LEFT_ARROW.addEventListener("click", leftClick);
+PAGINATION_RIGHT_DOUBLEARROW.addEventListener("click", rightToEnd);
+PAGINATION_LEFT_DOUBLEARROW.addEventListener("click", leftToStart);
