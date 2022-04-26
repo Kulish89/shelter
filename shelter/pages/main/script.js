@@ -132,8 +132,7 @@ switch (CARROUSEL_BLOCK.offsetWidth) {
 // =====================================================================
 BURGER.addEventListener("click", function () {
   BURGER.classList.toggle("burger-rotate");
-  MENU.classList.toggle("visible");
-  MAIN_BLOCK.classList.toggle("vertical-padding-main");
+  MENU.classList.toggle("transition-menu");
 });
 
 LEFT_ARROW_CARROUSEL.addEventListener("click", moveLeft);

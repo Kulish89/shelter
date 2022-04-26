@@ -115,6 +115,7 @@ body {
 }
 .blocking {
   overflow: hidden;
+  margin-right: 17px;
 }
 /* =========================================================================== */
 .header {
@@ -125,15 +126,15 @@ body {
   top: 0;
   z-index: 50;
 }
-@media (max-width: 1023px) {
-  .header {
-    padding: 30px 0 0 0;
-  }
-}
 .header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 1279px) {
+  .header {
+    padding: 30px 0 0 0;
+  }
 }
 
 .header__logo-title h1 {
@@ -162,6 +163,10 @@ body {
   display: flex;
   gap: 35px;
 }
+.header__logo {
+  position: relative;
+  z-index: 5;
+}
 .menu__list-item {
   font-family: Arial;
   font-weight: 400;
@@ -177,18 +182,23 @@ body {
   border-bottom: solid #f1cdb3 3px;
 }
 @media (max-width: 767px) {
-  .header__container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 158px;
-  }
   .header__menu {
-    display: none;
-    align-self: center;
+    position: absolute;
+    top: 0;
+    right: -320px;
+    height: 100vh;
+    width: 320px;
+    background-color: #292929;
+    transition: 0.3s;
   }
   .menu__list {
+    margin-top: 248px;
+    text-align: center;
     flex-direction: column;
     gap: 40px;
+  }
+  .active {
+    align-self: center;
   }
 
   .menu__list-item {
@@ -197,8 +207,8 @@ body {
     color: #fafafa;
   }
 }
-.visible {
-  display: initial;
+.transition-menu {
+  right: 0px;
 }
 /* =====Burger============================================================== */
 .burger {
@@ -208,6 +218,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  transition-duration: 0.3s;
 }
 .burger__line {
   width: 30px;
@@ -225,6 +236,7 @@ body {
 .burger-rotate {
   transform: rotate(90deg);
 }
+
 /* MAIN-BLOCK=============================================== */
 .main {
   width: 100%;
@@ -324,12 +336,8 @@ body {
   .main-block__picture {
     max-width: 260px;
   }
-  .main-block__container {
-  }
 }
-.vertical-padding-main {
-  padding-top: 723px;
-}
+
 /* ============================================== */
 
 /* ========About======================================================== */
