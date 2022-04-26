@@ -110,6 +110,9 @@ const PAGINATION_LEFT_DOUBLEARROW = document.querySelector("._left-arrows");
 const PAGINATION_LEFT_ARROW = document.querySelector("._left-arrow");
 const PAGINATION_RIGHT_DOUBLEARROW = document.querySelector("._right-arrows");
 const PAGINATION_RIGHT_ARROW = document.querySelector("._right-arrow");
+const POPUP = document.getElementById("popup");
+const CLOSE_POPUP = document.querySelector(".popup__close");
+const POPUP_CONTENT = document.querySelector(".popup__content");
 // =====================================================================
 let numOfPages;
 switch (CARDS_BLOCK.offsetWidth) {
@@ -148,7 +151,7 @@ function createPaginationPage(itemsArray) {
   CARDS_BLOCK.append(cards_block_wrapper);
 }
 function createPetCard(obj) {
-  return `<div id="${obj.id}"class="ourpets-content__card card">
+  return `<div id="${obj.id}"class="ourpets-content__card card" onclick="openPopup(event, ${obj.id})">
   <img
     class="card__img"
     src="../../assets/images/${obj.name}.png"
@@ -282,6 +285,48 @@ function leftToStart(event) {
   PAGINATION_RIGHT_ARROW.classList.remove("disabled");
   PAGINATION_LEFT_DOUBLEARROW.classList.add("disabled");
   PAGINATION_LEFT_ARROW.classList.add("disabled");
+}
+function openPopup(event, id) {
+  event.preventDefault();
+  let obj = PETS.find((pet) => pet.id == id);
+  POPUP_CONTENT.innerHTML = createPopupContent(obj);
+  POPUP.classList.add("open");
+  document.documentElement.classList.add("blocking");
+  POPUP.addEventListener("click", function (e) {
+    if (!e.target.closest(".popup__content")) {
+      POPUP.classList.remove("open");
+      document.documentElement.classList.remove("blocking");
+    }
+  });
+}
+function closePopup(event) {
+  event.preventDefault();
+  POPUP.classList.remove("open");
+  document.documentElement.classList.remove("blocking");
+}
+function createPopupContent(obj) {
+  return `<div class="pet__image">
+  <img src="../../assets/images/${
+    obj.name
+  }.png" alt="" /></div><div class="pet__about">
+  <div>
+    <h3 class="pet__name">${obj.name}</h3>
+    <h5 class="pet__breed">${obj.type}-${obj.breed}</h5>
+  </div> <p class="pet__description">${obj.description}</p>
+  <ul class="pet__others others-list">
+    <li class="pet__age others-list__item">
+      <strong>Age:</strong>${obj.age}</li>
+    <li class="pet__inoculations others-list__item">
+      <strong>Inoculations:</strong>${obj.inoculations.join(", ")}</li>
+    <li class="pet__diseases others-list__item">
+      <strong>Diseases:</strong>${obj.diseases.join(", ")}</li>
+    <li class="pet__parasites others-list__item">
+      <strong>Parasites:</strong>${obj.parasites.join(", ")}</li>
+  </ul>
+</div>
+<a href="#" class="popup__close" onclick = "closePopup(event)"
+  ><img src="../../assets/icons/modal-close-vector.svg" alt=""
+/></a>`;
 }
 // =================================================================================
 BURGER.addEventListener("click", function () {
