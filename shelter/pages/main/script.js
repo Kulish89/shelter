@@ -135,10 +135,8 @@ BURGER.addEventListener("click", function () {
   MENU.classList.toggle("transition-menu");
 });
 MENU.addEventListener("click", function (event) {
-  if (event.target.tagName == "A") {
-    BURGER.classList.toggle("burger-rotate");
-    MENU.classList.toggle("transition-menu");
-  }
+  BURGER.classList.toggle("burger-rotate");
+  MENU.classList.toggle("transition-menu");
 });
 LEFT_ARROW_CARROUSEL.addEventListener("click", moveLeft);
 
